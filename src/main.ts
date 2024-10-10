@@ -12,7 +12,6 @@ import * as directives from 'vuetify/directives'
 import { de } from 'vuetify/locale'
 import '@mdi/font/css/materialdesignicons.css'
 
-
 import './style.css'
 import App from './App.vue'
 import Login from './components/Auth/Login.vue'
@@ -35,7 +34,7 @@ const vuetify = createVuetify({
 })
 
 const apolloClient = new ApolloClient({
-  uri: 'http://localhost:4000/graphql', // Replace with your GraphQL endpoint
+  uri: import.meta.env.VITE_GRAPHQL_URL || '/graphql', // Use environment variable or default to relative path
   cache: new InMemoryCache(),
 })
 
